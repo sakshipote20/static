@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static webpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+<body>
+
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-white" id="sidebar-wrapper">
+        <div class=" sak sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+                class=" fas fa-book me-2"></i>GoodRead's</div>
+        <div class="list-group list-group-flush my-3">
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                    class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+            <a href="books.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-book-open me-2"></i>Books</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-list-alt me-2"></i>Categories</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-user me-2"></i>Authors</a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-star me-2"></i>Best Sellers</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                <h2 class="fs-2 m-0">Book Store Dashboard</h2>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user me-2"></i>Sakshi
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid px-4">
+            <div class="row g-3 my-2">
+                <div class="col-md-3">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2">1500</h3>
+                            <p class="fs-5">Total Books</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2">$30,000</h3>
+                            <p class="fs-5">Total Sales</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2">1200</h3>
+                            <p class="fs-5">Total Customers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2">4.5</h3>
+                            <p class="fs-5">Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-5">
+                <h3 class="fs-4 mb-3">Book Categories Analytics</h3>
+                <div class="col">
+                    <div class="card bg-white rounded shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Popularity by Category</h5>
+                            <canvas id="category-chart" style="height: 300px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row my-5">
+                <h3 class="fs-4 mb-3">Recent Orders</h3>
+                <div class="col">
+                    <table class="table bg-white rounded shadow-sm  table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col" width="50">#</th>
+                                <th scope="col">Book Title</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Order Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>The Great Gatsby</td>
+                                <td>F. Scott Fitzgerald</td>
+                                <td>Sakshi</td>
+                                <td>$10.99</td>
+                                <td>2024-02-18</td>
+                                <td>Delivered</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>To Kill a Mockingbird</td>
+                                <td>Harper Lee</td>
+                                <td>Mohit</td>
+                                <td>$12.99</td>
+                                <td>2024-02-17</td>
+                                <td>Processing</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>Rashmi</td>
+                                <td>$9.99</td>
+                                <td>2024-02-16</td>
+                                <td>Shipped</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>The Catcher in the Rye</td>
+                                <td>J.D. Salinger</td>
+                                <td>Atharva</td>
+                                <td>$11.99</td>
+                                <td>2024-02-15</td>
+                                <td>Delivered</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Harry Potter and the Philosopher's Stone</td>
+                                <td>J.K. Rowling</td>
+                                <td>Siddhant</td>
+                                <td>$14.99</td>
+                                <td>2024-02-14</td>
+                                <td>Delivered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+<script>
+  // Sample data for book categories
+  var categoriesData = {
+      labels: ["Fiction", "Non-fiction", "Mystery", "Science Fiction", "Fantasy", "Romance"],
+      datasets: [{
+          label: "Number of Books",
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderColor: "rgba(75, 192, 192, 1)",
+          borderWidth: 1,
+          data: [150, 120, 90, 80, 70, 60], // Sample data representing the number of books in each category
+      }]
+  };
+
+  // Create a bar chart
+  var ctx = document.getElementById('category-chart').getContext('2d');
+  var categoryChart = new Chart(ctx, {
+      type: 'bar',
+      data: categoriesData,
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+      }
+  });
+
+  var el = document.getElementById("wrapper");
+  var toggleButton = document.getElementById("menu-toggle");
+
+  toggleButton.onclick = function () {
+      el.classList.toggle("toggled");
+  };
+</script>
+
+
+    
+   
+</body>
+</html>
+
